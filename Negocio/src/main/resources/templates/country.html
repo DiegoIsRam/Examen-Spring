@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="layout/plantilla::head">
+</head>
+<style th:replace="layout/plantilla::style"></style>
+<body>
+<head th:replace="layout/plantilla::header"></head>
+<h1>Empleados</h1>
+
+
+<div th:if="${countries != null and !countries.empty}">
+<table class="content-table">
+    <tr>
+        <th>ID</th>
+        <th>Code</th>
+        <th>Name</th>
+
+    </tr>
+    <tr th:each="country: ${countries}">
+        <td th:text="${country.id}">Mostrar Id</td>
+        <td th:text="${country.code}">Mostrar Code</td>
+        <td th:text="${country.name}">Mostrar Name</td>
+
+
+    </tr>
+
+</table>
+</div>
+<a th:href="@{/agregar}">Añadir País</a>
+
+<div th:if="${countries == null or countries.empty}">
+    <p>La lista de Paises está vacía está vacía</p>
+</div>
+<footer th:replace="layout/plantilla::footer"></footer>
+</body>
+</html>

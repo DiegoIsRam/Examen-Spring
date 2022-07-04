@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="layout/plantilla::head">
+</head>
+<style th:replace="layout/plantilla::style"></style>
+<body>
+<head th:replace="layout/plantilla::header"></head>
+<h1>Empleados</h1>
+
+
+<div th:if="${employees != null and !employees.empty}">
+<table class="content-table">
+    <tr>
+        <th>ID</th>
+        <th>Surname</th>
+        <th>Firstname</th>
+
+    </tr>
+    <tr th:each="employee: ${employees}">
+        <td th:text="${employee.id}">Mostrar Id</td>
+        <td th:text="${employee.surname}">Mostrar Surname</td>
+        <td th:text="${employee.firstname}">Mostrar firstname</td>
+
+
+    </tr>
+
+</table>
+</div>
+<a th:href="@{/agregar}">Añadir Articulo</a>
+
+<div th:if="${employees == null or employees.empty}">
+    <p>La lista de Empleados está vacía está vacía</p>
+</div>
+<footer th:replace="layout/plantilla::footer"></footer>
+</body>
+</html>

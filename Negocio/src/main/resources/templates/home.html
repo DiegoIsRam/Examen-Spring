@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="layout/plantilla::head">
+</head>
+<style th:replace="layout/plantilla::style"></style>
+<body>
+<head th:replace="layout/plantilla::header"></head>
+<h1>Rutas para cada Entidad</h1>
+
+
+<div >
+<table class="content-table">
+    <tr>
+        <th>Employee</th>
+        <th>Country</th>
+        <th>Airport</th>
+        <th>Language</th>
+
+    </tr>
+    <tr >
+        <td >localhost:8080/employee</td>
+        <td >localhost:8080/country</td>
+        <td >localhost:8080/airport</td>
+        <td >localhost:8080/language</td>
+
+
+    </tr>
+
+</table>
+</div>
+
+<footer th:replace="layout/plantilla::footer"></footer>
+</body>
+</html>
