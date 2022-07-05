@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="layout/plantilla::head">
+</head>
+<style th:replace="layout/plantilla::style"></style>
+<body>
+<head th:replace="layout/plantilla::header"></head>
+<h3> Datos del Empleados</h3>
+<a th:href="@{/employee}">Regresar</a>
+
+<br/>
+<form th:action="@{/employee/guardar}" method="post" th:object="${employee}">
+    <label for="surname">Firstname: </label>
+    <input type="text" name="firstname" th:field="*{surname}"/><br/>
+    <label for="firstname">Surname: </label>
+    <input type="text" name="surname" th:field="*{firstname}"/><br/>
+    <input type="submit" name="guardar" value="Guardar"/>
+</form>
+
+
+
+</body>
+</html>

@@ -14,19 +14,23 @@
         <th>ID</th>
         <th>Surname</th>
         <th>Firstname</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
 
     </tr>
     <tr th:each="employee: ${employees}">
         <td th:text="${employee.id}">Mostrar Id</td>
         <td th:text="${employee.surname}">Mostrar Surname</td>
         <td th:text="${employee.firstname}">Mostrar firstname</td>
+        <td><a th:href="@{/employee/editar/} + ${employee.id}" th:text="Editar"/></td>
+        <td><a th:href="@{/employee/eliminar/} + ${employee.id}" th:text="Eliminar"/></td>
 
 
     </tr>
 
 </table>
 </div>
-<a th:href="@{/agregar}">Añadir Articulo</a>
+<a th:href="@{/employee/agregar}">Agregar Empleado</a>
 
 <div th:if="${employees == null or employees.empty}">
     <p>La lista de Empleados está vacía está vacía</p>

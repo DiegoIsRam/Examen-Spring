@@ -14,12 +14,16 @@
         <th>ID</th>
         <th>Code</th>
         <th>Name</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
 
     </tr>
     <tr th:each="country: ${countries}">
         <td th:text="${country.id}">Mostrar Id</td>
         <td th:text="${country.code}">Mostrar Code</td>
         <td th:text="${country.name}">Mostrar Name</td>
+        <td><a th:href="@{/country/editar/} + ${country.id}" th:text="Editar"/></td>
+        <td><a th:href="@{/country/eliminar/} + ${country.id}" th:text="Eliminar"/></td>
 
 
     </tr>

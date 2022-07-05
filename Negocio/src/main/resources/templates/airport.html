@@ -13,12 +13,16 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Editar</th>
+        <th>Eliminar</th><q>q</q>
 
 
     </tr>
     <tr th:each="airport: ${airports}">
         <td th:text="${airport.id}">Mostrar Id</td>
         <td th:text="${airport.name}">Mostrar Nombre</td>
+        <td><a th:href="@{/airport/editar/} + ${airport.id}" th:text="Editar"/></td>
+        <td><a th:href="@{/airport/eliminar/} + ${airport.id}" th:text="Eliminar"/></td>
 
 
 
